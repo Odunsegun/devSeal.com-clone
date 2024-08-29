@@ -330,6 +330,7 @@ nav ul li a:hover {
 }
 
 .card{
+    z-index: 1000;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -533,6 +534,25 @@ nav ul li a:hover {
     border: 1px solid #CCD0D4; 
 }
 
+.card.three:hover{
+    background-color: #3972dd;
+    border: 1px solid #0031B5;
+    transform: 0.3s ease-in-out;    
+}
+.card.three .card-caption.three:hover{
+    color: #fff; 
+    font-weight: bold; 
+    transition: color 0.3s ease, font-weight 0.3s ease;
+}
+.card.three .card-body.three:hover{
+    color: #fff; 
+    font-weight: bold; 
+    transition: color 0.3s ease, font-weight 0.3s ease;
+}
+.card.three .card-icon-box:hover{
+    filter: brightness(0) invert(1);
+}
+
 .card-content.three{
     flex-grow: 1;
     display: flex;
@@ -541,11 +561,7 @@ nav ul li a:hover {
     padding: 32px 24px;
 }
 
-.card.three:hover{
-    background-color: #3972dd;
-    border: 1px solid #0031B5;
-    transform: 0.3s ease-in-out;    
-}
+
 
 
 
@@ -709,10 +725,13 @@ nav ul li a:hover {
     border-radius: 8px;   
 }
 
+
 .card.five:hover{
     color: #0a4cc5;
     transition: transform 0.3s ease;
 }
+
+
 
 
 .card-content.five {
@@ -739,6 +758,7 @@ nav ul li a:hover {
     width: 24px;
     transition: transform 0.3s ease;
 }
+
 
 .card-icon-box.five img:hover {
     transform: scale(1.2); 
@@ -1038,6 +1058,50 @@ nav ul li a:hover {
     width: 250px;
     height: 250px;
 }
+
+.card:hover{
+    background-color: #3972dd;
+    border: 1px solid #0031B5;
+    transform: 0.3s ease-in-out;
+}
+.card:hover .card-body-text{
+    color: #fff; 
+    font-weight: bold; 
+    transition: color 0.3s ease, font-weight 0.3s ease;
+}
+.card:hover .card-caption-text {
+    color: #fff; 
+    font-weight: bold;
+    transition: color 0.3s ease, font-weight 0.3s ease;
+}
+.card:hover .card-body-containee img {
+    filter: brightness(0) invert(1); 
+}
+.card.three:hover{
+    background-color: #3972dd;
+    border: 1px solid #0031B5;
+    transform: 0.3s ease-in-out;    
+}
+.card.three .card-caption.three:hover{
+    color: #fff; 
+    font-weight: bold; 
+    transition: color 0.3s ease, font-weight 0.3s ease;
+}
+.card.three .card-body.three:hover{
+    color: #fff; 
+    font-weight: bold; 
+    transition: color 0.3s ease, font-weight 0.3s ease;
+}
+.card.three .card-icon-box:hover{
+    filter: brightness(0) invert(1);
+}
+.card.five:hover{
+    color: #0a4cc5;
+    transition: transform 0.3s ease;
+}
+.card.five .card-icon-box.five img:hover {
+    transform: scale(1.2); 
+}
 /*
 
 
@@ -1187,12 +1251,33 @@ nav ul li a:hover {
 }
 
 @media screen and (max-width: 1110px) {
+    .containerer {
+        max-width: 100%;
+        grid-gap: 80px;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 70px;
+        font-size: 15px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    
+    .main-logo-container {
+        display: flex;
+        grid-column-gap: 15px;
+    }
+
     nav ul{
         display: none;
     }
 
     .mobile{
         display: flex;
+        padding-right: 100px;
     }
 
     .mobile-menu{
@@ -1205,6 +1290,11 @@ nav ul li a:hover {
         align-items: center;
         justify-content: center;
         cursor: pointer;
+    }
+
+    .active .main-logo-container {
+        z-index: 1500;
+        position: fixed;
     }
 
     .line{
@@ -1224,12 +1314,16 @@ nav ul li a:hover {
     }
 
     .active .line-top{
+        position: fixed;
         margin-top: 0;
+        margin-left: 1600px;
         transform: rotate(45deg);
         transition: transform .3192s .1s cubic-bezier(0.04,0.04,0.12,0.96);
     }
 
     .active .line-bottom{
+        position: fixed;
+        margin-left: 1600px;
         margin-top: 0;
         transform: rotate(-45deg);
         transition: transform .3192s .1s cubic-bezier(0.04,0.04,0.12,0.96);
@@ -1241,6 +1335,8 @@ nav ul li a:hover {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        position: fixed;
+        z-index: 500;
     }
     
     nav ul {
@@ -1254,7 +1350,7 @@ nav ul li a:hover {
         justify-content: flex-start;
         padding: 10.5em 2rem;
         background-color: white;
-        z-index: 1000;
+        z-index: 500;
         box-sizing: border-box;
         opacity: 0;
         transition: opacity .3s, width .3s;
@@ -1360,9 +1456,29 @@ nav ul li a:hover {
         padding: 12px 40px;
         cursor: pointer;
     }
+
+    
+    
+    .cta-7:hover{
+    
+        background-color: #ffffe0;
+    }
 }
 
 @media screen and (max-width: 991px) {
+
+    .main-logo img {
+        height: 32px;
+        width: 32px;
+    }
+    .logo-text-font {
+        font-size: 28px;
+    }
+    .logo-text {
+        padding-top: 8px;
+    }
+
+
     .card-background-imaging.blue {
         top: 61%;
         left: 55%;
@@ -1473,6 +1589,14 @@ nav ul li a:hover {
 
 
 @media screen and (max-width: 800px) {
+    
+    .mobile {
+        padding-right: 40px;
+    }
+    .logo-text{
+        display: none;
+    }
+    
     nav ul {
         list-style: none;
         margin: 0;
@@ -1680,7 +1804,7 @@ nav ul li a:hover {
         margin: 6px px;
         background-color: #fff;
         height: 27em;
-        width: 16em;
+        
     }
 
     .card-background-imaging.blue {
@@ -1728,10 +1852,19 @@ nav ul li a:hover {
         width: 20%;
         height: 20px;
     }
+    .card-caption.three{
+        font-size: 24px;
+    }
+    .card-body.three{
+        font-size: 16px;
+    }
+    .card.three{
+        width: 96%;
+    }
 
     .card-holder.three {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(1, 1fr);
     }
 
     .card.six{
@@ -1783,30 +1916,26 @@ nav ul li a:hover {
     
 }
 @media screen and (max-width: 516px) {
+
+
     .cta {
         font-weight: 45;
         font-size: 9px;
         padding: 6px 12px;
     }
-
     .main-logo img {
         height: 22px;
         width: 22px;
     }
-
-    .logo-text {
-        padding-top: 3px;
+    .mobile {
+        display: flex;
+        padding-right: 40px;
     }
-
-    .logo-text-font {
-        font-size: 18px;
-    }
-
     .main-logo-container {
         display: flex;
         grid-column-gap: 10px;
         margin-left: 10px;
-        margin-right: -30px;
+        margin-right: 10px;
     }
 
     .card {
@@ -1850,8 +1979,14 @@ nav ul li a:hover {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
     }
+    .card-caption.three{
+        font-size: 24px;
+    }
+    .card-body.three{
+        font-size: 16px;
+    }
     .card.three{
-        width: 80%
+        width: 96%;
     }
     .card-icon-box{
         font-size: 30px;
@@ -1886,9 +2021,7 @@ nav ul li a:hover {
 
 @media screen and (max-width: 485px) {
 
-    .logo-text{
-        display: none;
-    }
+   
 
     .image-date{
         position: absolute;
@@ -1907,7 +2040,7 @@ nav ul li a:hover {
     }
 
     .card{
-        width: 80%
+        width: 95%
     }
 
     .card-holder {
@@ -1954,6 +2087,19 @@ nav ul li a:hover {
     }
 }
 @media screen and (max-width: 400px) {
+    
+    .card.three{
+        width: 95%;
+    }
+    .mobile {
+
+        padding-right: 20px;
+    }
+    .cta {
+        display: none;
+    }
+    
+
     .hero-text h1{
         font-size: 32px;
         line-height: 36px;
@@ -2064,6 +2210,12 @@ nav ul li a:hover {
     
 }
 @media screen and (max-width: 300px) {
+
+    
+    .card.three{
+        width: 93%;
+    }
+
     .cta{
         display: none;
     }
@@ -2076,7 +2228,7 @@ nav ul li a:hover {
     .card {  
         margin: 6px px;
         height: 27em;
-        width: 80%
+        width: 93%
     }
 
     .card-holder {
@@ -2142,7 +2294,7 @@ nav ul li a:hover {
     .card {  
         margin: 6px px;
         height: 30em;
-        width: 80%
+        width: 92%
     }
    
 
@@ -2300,7 +2452,7 @@ nav ul li a:hover {
     .card {  
         margin: 6px px;
         height: 27em;
-        width: 85%
+        width: 80%
     }
 
     .card-body-text{
@@ -2329,6 +2481,10 @@ nav ul li a:hover {
     .card-body.three{
         font-size: 8px;
         line-height: 1.4;
+    }
+    
+    .card.three{
+        width: 75%;
     }
     
 
